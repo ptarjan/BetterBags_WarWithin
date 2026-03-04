@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Bump TOC to 12.0.1
 
+### Fixed
+- Remove deleted items
+
 ## [1.12.0] 2026-01-22
 ### Changed
 - Bump TOC to 12.0.0

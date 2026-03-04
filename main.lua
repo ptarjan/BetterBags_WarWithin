@@ -22,8 +22,9 @@ local ctx = context:New('BBTWW_Event')
 for category, items in pairs(addon.db) do
 	categories:WipeCategory(ctx, L:G(category))
 	for _, item in pairs(items) do
-		-- pcall to skip items that no longer exist in the current client
-		-- (e.g. seasonal items not yet active or removed between patches)
-		pcall(categories.AddItemToCategory, categories, ctx, item, L:G(category))
+		local success, err = pcall(categories.AddItemToCategory, categories, ctx, item, L:G(category))
+		--@debug@
+		if not success then print(err) end
+		--@end-debug@
 	end
 end
